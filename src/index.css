@@ -1,7 +1,7 @@
 html,
 body,
 #root {
-  height: 100vh
+  height: 100vh;
 }
 
 .AppContainer {
@@ -10,18 +10,6 @@ body,
   justify-content: center;
   align-items: center;
   color: white;
-
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  font-size: 4em;
-  line-height: 1.1;
-}
-
-body {
+  font-family: Bahnschrift;
   background: linear-gradient(to top, rgb(59, 27, 139) 0%, rgb(141, 196, 248) 60%);
 }

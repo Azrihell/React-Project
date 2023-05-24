@@ -23,7 +23,7 @@ export const App = () => {
   return (
     <Box className='tc AppContainer'>
       <Box>
-        <h1>Find your RoboFriends!</h1>
+        <h1 className='f1'>Find your RoboFriends!</h1>
         <Grid>
           <SearchBox searchField={searchField} setSearchField={setSearchField} />
           <CardList robots={filteredRobots()} />
