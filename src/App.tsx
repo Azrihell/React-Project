@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardList } from './CardList'
-import { robots } from './robots'
+import { robots as myRobots } from './robots'
 import { SearchBox } from './SearchBox'
 import { Grid, Box } from '@mui/material'
 
@@ -12,7 +12,18 @@ interface IRobot {
 }
 
 export const App = () => {
+  const [robots, setRobots] = React.useState<Array<IRobot>>(myRobots)
   const [searchField, setSearchField] = React.useState<string>('')
+
+  React.useEffect(() => {
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => { setRobots([...robots, ...users]) })
+
+
+  }, [])
+
 
   const filteredRobots = () => {
     return robots.filter((robot: IRobot) => {
@@ -32,3 +43,4 @@ export const App = () => {
     </Box>
   )
 }
+

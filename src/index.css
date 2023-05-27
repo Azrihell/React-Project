@@ -2,14 +2,16 @@ html,
 body,
 #root {
   height: 100vh;
+
 }
 
 .AppContainer {
-  height: 100vh;
+  background: linear-gradient(to top, rgb(59, 27, 139) 0%, rgb(141, 196, 248) 60%);
+  background-attachment: fixed;
+  height: 100%;
   display: grid;
   justify-content: center;
   align-items: center;
   color: white;
   font-family: Bahnschrift;
-  background: linear-gradient(to top, rgb(59, 27, 139) 0%, rgb(141, 196, 248) 60%);
 }
