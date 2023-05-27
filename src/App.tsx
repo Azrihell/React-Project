@@ -1,8 +1,9 @@
 import React from 'react'
-import { CardList } from './CardList'
-import { robots as myRobots } from './robots'
-import { SearchBox } from './SearchBox'
+import { CardList } from './Components/CardList'
+import { robots as myRobots } from './Components/robots'
+import { SearchBox } from './Components/SearchBox'
 import { Grid, Box } from '@mui/material'
+import { Scroll } from './Components/scroll'
 
 interface IRobot {
   id: number
@@ -21,7 +22,6 @@ export const App = () => {
       .then(response => response.json())
       .then(users => { setRobots([...robots, ...users]) })
 
-
   }, [])
 
 
@@ -37,7 +37,9 @@ export const App = () => {
         <h1 className='f1'>Find your RoboFriends!</h1>
         <Grid>
           <SearchBox searchField={searchField} setSearchField={setSearchField} />
-          <CardList robots={filteredRobots()} />
+          <Scroll>
+            <CardList robots={filteredRobots()} />
+          </Scroll>
         </Grid>
       </Box>
     </Box>
